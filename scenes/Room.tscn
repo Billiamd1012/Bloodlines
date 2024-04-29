@@ -29,8 +29,7 @@ material/0 = ExtResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Camera" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.843757, 0.536725, 0, -0.536725, 0.843757, 0, 3.39674, 8.21993 )
-fov = 50.7
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20535, 5.00768 )
 
 [node name="StaticBody2" type="StaticBody" parent="."]
 

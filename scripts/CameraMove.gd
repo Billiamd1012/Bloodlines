@@ -25,5 +25,6 @@ func _unhandled_input(event):
 		move = move.normalized() * sens
 
 func _process(delta):
-	var global_move = self.global_transform.basis.xform(move * delta)
-	self.global_translate(global_move)  # Apply the movement to the camera 
+	var parent_node = self.get_parent()
+	if parent_node:
+		parent_node.translate(move * delta)  # Apply the movement to the parent node
