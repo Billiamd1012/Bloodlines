@@ -8,10 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Building",
+"language": "GDScript",
+"path": "res://scripts/Building.gd"
+}, {
+"base": "Node",
+"class": "PlayerInterface",
+"language": "GDScript",
+"path": "res://scripts/PlayerInterface.gd"
+} ]
+_global_script_class_icons={
+"Building": "",
+"PlayerInterface": ""
+}
+
 [application]
 
 config/name="Bloodlines"
-run/main_scene="res://scenes/Room.tscn"
+run/main_scene="res://scenes/menu/MainMenu.tscn"
 config/icon="res://assets/icon.png"
 
 [gui]
