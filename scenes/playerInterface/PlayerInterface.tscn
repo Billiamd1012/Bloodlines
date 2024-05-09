@@ -1,52 +1,57 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/PlayerInterface.gd" type="Script" id=1]
-[ext_resource path="res://scripts/BuildingManager.gd" type="Script" id=2]
 [ext_resource path="res://assets/menu/buildingbuttons/farming/Farm.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/menu/buildingbuttons/mining/Mine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/playerInterface/PlaceBuildingButton.gd" type="Script" id=5]
+[ext_resource path="res://assets/BlueBox.tscn" type="PackedScene" id=8]
 
-[node name="PlayerInterface" type="Node"]
-script = ExtResource( 1 )
+[sub_resource type="BoxShape" id=1]
+
+[node name="PlayerInterface" type="Node2D"]
 
 [node name="HUD" type="Control" parent="."]
 margin_right = 1027.0
 margin_bottom = 599.0
 
-[node name="BuildingBar" type="HBoxContainer" parent="HUD"]
+[node name="BuildingSelect" type="HBoxContainer" parent="HUD"]
 margin_top = 468.0
 margin_right = 1025.0
 margin_bottom = 549.92
-script = ExtResource( 2 )
 
-[node name="PlaceBuildingButton" type="Button" parent="HUD/BuildingBar"]
-margin_right = 141.0
-margin_bottom = 81.0
-text = "Enter building mode"
-script = ExtResource( 5 )
-
-[node name="FarmingButton" type="Button" parent="HUD/BuildingBar"]
-visible = false
-margin_left = 145.0
-margin_right = 208.0
+[node name="FarmingButton" type="Button" parent="HUD/BuildingSelect"]
+margin_right = 63.0
 margin_bottom = 81.0
 text = "Farming"
 
-[node name="Farm" parent="HUD/BuildingBar/FarmingButton" instance=ExtResource( 3 )]
+[node name="Farm" parent="HUD/BuildingSelect/FarmingButton" instance=ExtResource( 3 )]
 visible = false
-anchor_left = -0.5
+anchor_left = 1.5
+anchor_right = 1.537
+script = null
 
-[node name="MiningButton" type="Button" parent="HUD/BuildingBar"]
+[node name="BlueBox" parent="HUD/BuildingSelect/FarmingButton/Farm" instance=ExtResource( 8 )]
 visible = false
-margin_left = 472.0
-margin_top = 40.0
-margin_right = 267.0
-margin_bottom = 80.0
+
+[node name="MiningButton" type="Button" parent="HUD/BuildingSelect"]
+margin_left = 67.0
+margin_right = 122.0
+margin_bottom = 81.0
 text = "Mining"
 
-[node name="Mine" parent="HUD/BuildingBar/MiningButton" instance=ExtResource( 4 )]
+[node name="Mine" parent="HUD/BuildingSelect/MiningButton" instance=ExtResource( 4 )]
 visible = false
-anchor_left = 0.8
-anchor_right = 0.8
+anchor_left = -1.3
+anchor_right = -1.3
+margin_left = 0.5
+margin_right = 49.5
 
-[connection signal="pressed" from="HUD/BuildingBar/PlaceBuildingButton" to="HUD/BuildingBar/PlaceBuildingButton" method="_on_PlaceBuildingButton_pressed"]
+[node name="BuildingManager" type="Spatial" parent="."]
+
+[node name="BuildingPreview" type="MeshInstance" parent="BuildingManager"]
+
+[node name="Area" type="Area" parent="BuildingManager"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BuildingManager/Area"]
+shape = SubResource( 1 )
+
+[connection signal="pressed" from="HUD/BuildingSelect/FarmingButton" to="HUD/BuildingSelect/FarmingButton" method="_on_FarmingButton_pressed"]
+[connection signal="pressed" from="HUD/BuildingSelect/FarmingButton/Farm" to="HUD/BuildingSelect/FarmingButton/Farm" method="_on_Farm_pressed"]

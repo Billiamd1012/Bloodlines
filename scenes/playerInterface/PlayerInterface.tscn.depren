@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/playerInterface/PlayerInterface.gd" type="Script" id=1]
+[ext_resource path="res://scripts/playerInterface/BuildingManager.gd" type="Script" id=2]
+[ext_resource path="res://assets/menu/buildingbuttons/farming/Farm.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/menu/buildingbuttons/mining/Mine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/playerInterface/ui/FarmingButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/playerInterface/ui/MiningButton.gd" type="Script" id=6]
+[ext_resource path="res://assets/BlueBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/playerInterface/Building.gd" type="Script" id=9]
+
+[node name="PlayerInterface" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 1027.0
+margin_bottom = 599.0
+
+[node name="BuildingSelect" type="HBoxContainer" parent="HUD"]
+margin_top = 468.0
+margin_right = 1025.0
+margin_bottom = 549.92
+
+[node name="FarmingButton" type="Button" parent="HUD/BuildingSelect"]
+margin_right = 63.0
+margin_bottom = 81.0
+text = "Farming"
+script = ExtResource( 5 )
+
+[node name="Farm" parent="HUD/BuildingSelect/FarmingButton" instance=ExtResource( 3 )]
+visible = false
+anchor_left = 1.5
+anchor_right = 1.537
+
+[node name="BlueBox" parent="HUD/BuildingSelect/FarmingButton/Farm" instance=ExtResource( 8 )]
+script = ExtResource( 9 )
+
+[node name="MiningButton" type="Button" parent="HUD/BuildingSelect"]
+margin_left = 67.0
+margin_right = 122.0
+margin_bottom = 81.0
+text = "Mining"
+script = ExtResource( 6 )
+
+[node name="Mine" parent="HUD/BuildingSelect/MiningButton" instance=ExtResource( 4 )]
+visible = false
+anchor_left = -1.3
+anchor_right = -1.3
+margin_left = 0.5
+margin_right = 49.5
+
+[node name="BuildingManager" type="Spatial" parent="."]
+script = ExtResource( 2 )
+
+[node name="BuildingPreview" type="MeshInstance" parent="BuildingManager"]
+
+[node name="Area" type="Area" parent="BuildingManager"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BuildingManager/Area"]
+
+[connection signal="pressed" from="HUD/BuildingSelect/FarmingButton" to="HUD/BuildingSelect/FarmingButton" method="_on_FarmingButton_pressed"]
+[connection signal="pressed" from="HUD/BuildingSelect/FarmingButton/Farm" to="HUD/BuildingSelect/FarmingButton/Farm" method="_on_Farm_pressed"]
