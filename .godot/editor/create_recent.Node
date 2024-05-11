@@ -1,2 +1,7 @@
+DirectionalLight3D
+WorldEnvironment
+SubViewport
 CollisionShape3D
 MeshInstance3D
+StaticBody3D
+Camera3D

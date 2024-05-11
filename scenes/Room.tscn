@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvixuoh7mlxp8"]
+[gd_scene load_steps=13 format=3 uid="uid://cvixuoh7mlxp8"]
 
 [ext_resource type="PackedScene" uid="uid://cfho5gvtnrob8" path="res://scenes/playerInterface/Camera.tscn" id="1"]
-[ext_resource type="Material" path="res://assets/materials/Ground.tres" id="2"]
-[ext_resource type="Script" path="res://scripts/InterfaceManager.gd" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/menu/PauseMenu.tscn" id="4"]
+[ext_resource type="Material" path="res://assets/menu/Ground.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://wxxgvp43lfc7" path="res://scenes/menu/PauseMenu.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://m6xjuyy1eh1a" path="res://scenes/playerInterface/interface.tscn" id="4_mdfdb"]
 [ext_resource type="Script" path="res://scripts/playerInterface/MouseArea2D.gd" id="6"]
 
 [sub_resource type="NavigationMesh" id="6"]
-vertices = PackedVector3Array(-5.75, 0, -20, -5, 0, -20, -5, 0, -249.5, -6.25, 0, -19, -5.75, 0, -20, -5, 0, -249.5, -249.5, 0, -249.5, -249.5, 0, -19, 17.25, 0, 4.75, 18.5, 0, 6, 19.75, 0, 6, -4, 0, -19.75, -4, 0, -18.5, 17.25, 0, 4.75, -4, 0, -19.75, 17.25, 0, 4.75, 19.75, 0, 6, 249.5, 0, 7, 249.5, 0, -249.5, -5, 0, -249.5, 19.75, 0, 6, 20, 0, 7, 249.5, 0, 7, -5, 0, -249.5, -5, 0, -20, -4, 0, -19.75, -12.5, 0, 2, -6.25, 0, -18.75, -6.25, 0, -19, -249.5, 0, -19, -249.5, 0, 3.25, -13.75, 0, 2.5, -249.5, 0, 3.25, -13.75, 0, 3.25, -13.75, 0, 2.5, -12.5, 0, 2, -11.5, 0, 3, -5.25, 0, -17.75, -6.25, 0, -18.75, -4.5, 0, -17.75, -5.25, 0, -17.75, -11.5, 0, 3, -4.5, 0, -17.75, -11.5, 0, 3, -11.5, 0, 3.5, 17.25, 0, 4.75, -4, 0, -18.5, -13.75, 0, 4, -13.75, 0, 3.25, -249.5, 0, 3.25, -12.75, 0, 4.25, -13.75, 0, 4, -249.5, 0, 3.25, -249.5, 0, 249.5, -12.75, 0, 249.5, 17.75, 0, 6.75, 18.5, 0, 6, 17.25, 0, 4.75, -11.5, 0, 3.5, -12.25, 0, 4.25, 17.75, 0, 7.5, 17.75, 0, 6.75, -12.25, 0, 4.25, 17.75, 0, 7.5, -12.25, 0, 4.25, -12.75, 0, 4.25, -12.75, 0, 249.5, 19, 0, 249.5, 19, 0, 8.25, 249.5, 0, 7, 20, 0, 7, 20, 0, 7.75, 249.5, 0, 7, 20, 0, 7.75, 19, 0, 8.25, 19, 0, 249.5, 249.5, 0, 249.5)
+vertices = PackedVector3Array(-5.75, 0.825076, -20, -5, 0.825076, -20, -5, 0.825076, -249.5, -6.25, 0.825076, -19, -5.75, 0.825076, -20, -5, 0.825076, -249.5, -249.5, 0.825076, -249.5, -249.5, 0.825076, -19, 17.25, 0.825076, 4.75, 18.5, 0.825076, 6, 19.75, 0.825076, 6, -4, 0.825076, -19.75, -4, 0.825076, -18.5, 17.25, 0.825076, 4.75, -4, 0.825076, -19.75, 17.25, 0.825076, 4.75, 19.75, 0.825076, 6, 249.5, 0.825076, 7, 249.5, 0.825076, -249.5, -5, 0.825076, -249.5, 19.75, 0.825076, 6, 20, 0.825076, 7, 249.5, 0.825076, 7, -5, 0.825076, -249.5, -5, 0.825076, -20, -4, 0.825076, -19.75, -12.5, 0.825076, 2, -6.25, 0.825076, -18.75, -6.25, 0.825076, -19, -249.5, 0.825076, -19, -249.5, 0.825076, 3.25, -13.75, 0.825076, 2.5, -249.5, 0.825076, 3.25, -13.75, 0.825076, 3.25, -13.75, 0.825076, 2.5, -12.5, 0.825076, 2, -11.5, 0.825076, 3, -5.25, 0.825076, -17.75, -6.25, 0.825076, -18.75, -4.5, 0.825076, -17.75, -5.25, 0.825076, -17.75, -11.5, 0.825076, 3, -4.5, 0.825076, -17.75, -11.5, 0.825076, 3, -11.5, 0.825076, 3.5, 17.25, 0.825076, 4.75, -4, 0.825076, -18.5, -13.75, 0.825076, 4, -13.75, 0.825076, 3.25, -249.5, 0.825076, 3.25, -12.75, 0.825076, 4.25, -13.75, 0.825076, 4, -249.5, 0.825076, 3.25, -249.5, 0.825076, 249.5, -12.75, 0.825076, 249.5, 17.75, 0.825076, 6.75, 18.5, 0.825076, 6, 17.25, 0.825076, 4.75, -11.5, 0.825076, 3.5, -12.25, 0.825076, 4.25, 17.75, 0.825076, 7.5, 17.75, 0.825076, 6.75, -12.25, 0.825076, 4.25, 17.75, 0.825076, 7.5, -12.25, 0.825076, 4.25, -12.75, 0.825076, 4.25, -12.75, 0.825076, 249.5, 19, 0.825076, 249.5, 19, 0.825076, 8.25, 249.5, 0.825076, 7, 20, 0.825076, 7, 20, 0.825076, 7.75, 249.5, 0.825076, 7, 20, 0.825076, 7.75, 19, 0.825076, 8.25, 19, 0.825076, 249.5, 249.5, 0.825076, 249.5)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(13, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 19), PackedInt32Array(17, 19, 18), PackedInt32Array(22, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 31), PackedInt32Array(28, 31, 29), PackedInt32Array(29, 31, 30), PackedInt32Array(34, 33, 32), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(41, 40, 39), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 46), PackedInt32Array(44, 46, 45), PackedInt32Array(49, 48, 47), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 54), PackedInt32Array(52, 54, 53), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(58, 55, 59), PackedInt32Array(62, 61, 60), PackedInt32Array(64, 63, 65), PackedInt32Array(65, 63, 68), PackedInt32Array(65, 68, 67), PackedInt32Array(65, 67, 66), PackedInt32Array(71, 70, 69), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(75, 72, 76)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kovsu"]
@@ -26,20 +26,12 @@ height = 1.0
 
 [sub_resource type="CircleShape2D" id="5"]
 
-[sub_resource type="RectangleShape2D" id="4"]
-size = Vector2(1150.75, 98.75)
-
 [node name="Room" type="Node3D"]
 
 [node name="PauseMenu" parent="." instance=ExtResource("4")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CameraWrapper" parent="." instance=ExtResource("1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.823, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("6")
@@ -102,165 +94,11 @@ script = ExtResource("6")
 [node name="MouseAreaCollider" type="CollisionShape2D" parent="MouseArea"]
 shape = SubResource("5")
 
-[node name="Interface" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -92.0
-grow_horizontal = 2
-grow_vertical = 0
-script = ExtResource("3")
+[node name="Interface" parent="." instance=ExtResource("4_mdfdb")]
 
-[node name="InterfaceBackground" type="Panel" parent="Interface"]
-layout_mode = 0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -96.0
+[node name="CameraWrapper" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.9013, 0)
 
-[node name="BuildingTabContainer" type="TabContainer" parent="Interface"]
-layout_mode = 0
-offset_left = 127.0
-offset_top = -1.0
-offset_right = 1019.0
-offset_bottom = 87.0
-
-[node name="Industry" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
-layout_mode = 2
-
-[node name="BuildStockpile" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-layout_mode = 2
-text = "Stockpile"
-
-[node name="BuildWoodCutter" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-layout_mode = 2
-text = "Wood Cutters"
-
-[node name="BuildStoneCutter" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-layout_mode = 2
-text = "Stone Cutters"
-
-[node name="Food" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="BuildOrchard" type="Button" parent="Interface/BuildingTabContainer/Food"]
-layout_mode = 2
-text = "Orchard"
-
-[node name="BuildGranary" type="Button" parent="Interface/BuildingTabContainer/Food"]
-layout_mode = 2
-text = "Granary"
-
-[node name="Living" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="BuildHouse" type="Button" parent="Interface/BuildingTabContainer/Living"]
-layout_mode = 2
-text = "House"
-
-[node name="Walls" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="BuildWall" type="Button" parent="Interface/BuildingTabContainer/Walls"]
-layout_mode = 2
-text = "Wall"
-
-[node name="BuildBarArea" type="Area2D" parent="Interface"]
-
-[node name="BuildBarAreaCollider" type="CollisionShape2D" parent="Interface/BuildBarArea"]
-position = Vector2(574.625, 44)
-shape = SubResource("4")
-
-[node name="ResourcesControl" type="Control" parent="Interface"]
-anchors_preset = 0
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 124.0
-offset_bottom = 83.0
-
-[node name="ResourcesBox" type="VBoxContainer" parent="Interface/ResourcesControl"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 3.0
-offset_bottom = 51.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.67, 0.67)
-
-[node name="Wood" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-layout_mode = 2
-text = "Wood:"
-
-[node name="WoodValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Wood"]
-layout_mode = 0
-offset_left = 50.0
-offset_right = 141.0
-offset_bottom = 31.0
-text = "100
-"
-
-[node name="Stone" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-layout_mode = 2
-text = "Stone:"
-
-[node name="StoneValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Stone"]
-layout_mode = 0
-offset_left = 51.0
-offset_right = 141.0
-offset_bottom = 31.0
-text = "100
-"
-
-[node name="Iron" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-layout_mode = 2
-text = "Iron:"
-
-[node name="IronValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Iron"]
-layout_mode = 0
-offset_left = 51.0
-offset_right = 141.0
-offset_bottom = 31.0
-text = "100
-"
-
-[node name="Food" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-layout_mode = 2
-text = "Food:"
-
-[node name="FoodValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Food"]
-layout_mode = 0
-offset_left = 51.0
-offset_right = 141.0
-offset_bottom = 31.0
-text = "100
-"
-
-[node name="Gold" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-layout_mode = 2
-text = "Gold:"
-
-[node name="GoldValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Gold"]
-layout_mode = 0
-offset_left = 52.0
-offset_right = 141.0
-offset_bottom = 31.0
-text = "100
-"
-
-[connection signal="button_down" from="Interface/BuildingTabContainer/Industry/BuildStockpile" to="Interface" method="_on_BuildStockpile_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Industry/BuildWoodCutter" to="Interface" method="_on_BuildWoodCutter_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Industry/BuildStoneCutter" to="Interface" method="_on_BuildStoneCutter_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Food/BuildOrchard" to="Interface" method="_on_BuildOrchard_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Food/BuildGranary" to="Interface" method="_on_BuildWoodCutterButton_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Food/BuildGranary" to="Interface" method="_on_BuildGranary_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Living/BuildHouse" to="Interface" method="_on_BuildHouse_button_down"]
-[connection signal="button_down" from="Interface/BuildingTabContainer/Walls/BuildWall" to="Interface" method="_on_BuildWall_button_down"]
-[connection signal="area_entered" from="Interface/BuildBarArea" to="Interface" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Interface/BuildBarArea" to="Interface" method="_on_Area2D_area_exited"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 159.27, 68.0903)
+light_energy = 16.0

@@ -1,14 +1,6 @@
 res://default_env.tres
-res://scenes/menu/MainMenu.tscn
-res://scripts/GameManager.gd
-res://scenes/units/ResourceGatherer.gd
-res://assets/buildings/BuildingObject.gd
 res://scenes/Room.tscn
-res://scripts/menu/PauseMenu.gd
+res://scenes/menu/MainMenu.tscn
 res://scenes/playerInterface/Camera.tscn
-res://scenes/units/FoodGatherer.gd
-res://scripts/playerInterface/CameraMove.gd
-res://scripts/Citizen.gd
-res://scripts/InterfaceManager.gd
-res://scripts/playerInterface/MouseArea2D.gd
-res://scripts/MainCamera.gd
+res://scenes/test.tscn
+res://scenes/menu/PauseMenu.tscn
