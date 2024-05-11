@@ -1,20 +1,22 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh"
+uid="uid://di170qlulu3p6"
+path="res://.godot/imported/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh"
 
 [deps]
 
-files=[ "res://.import/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh" ]
+files=["res://.godot/imported/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh"]
 
 source_file="res://assets/buildings/Wall/wallCornerHalf.obj"
-dest_files=[ "res://.import/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh", "res://.import/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh" ]
+dest_files=["res://.godot/imported/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh", "res://.godot/imported/wallCornerHalf.obj-436dabb27715f1017d51fc460b84bba2.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

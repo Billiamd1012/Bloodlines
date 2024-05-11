@@ -1,7 +1,7 @@
 extends Button
 
-onready var building: Spatial = $BlueBox
-onready var player_interface: PlayerInterface = get_node("/root/Room/PlayerInterface")
+@onready var building: Node3D = $BlueBox
+@onready var player_interface: PlayerInterface = get_node("/root/Room/PlayerInterface")
 
 
 # On press 

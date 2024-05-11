@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 
 var WoodCuttersHut: PackedScene = ResourceLoader.load("res://assets/buildings/WoodCutters.tscn")
@@ -12,7 +12,7 @@ var Wall: PackedScene = ResourceLoader.load("res://assets/buildings/wallNarrow.t
 var WallCorner: PackedScene = ResourceLoader.load("res://assets/buildings/wallNarrowCorner.tscn")
 var WallGate: PackedScene = ResourceLoader.load("res://assets/buildings/wallNarrowGate.tscn")
 
-var CurrentSpawnable : StaticBody
+var CurrentSpawnable : StaticBody3D
 var AbleToBuild: bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -24,13 +24,13 @@ func _ready():
 func _process(_delta):
 	if GameManager.CurrentState == GameManager.State.Building:
 		# Raycast to determine where the cursor is on the ground
-		var camera = get_viewport().get_camera()
+		var camera = get_viewport().get_camera_3d()
 		var from = camera.project_ray_origin(get_viewport().get_mouse_position())
 		var to = from + camera.project_ray_normal(get_viewport().get_mouse_position()) * 1000
 		var cursorPos = Plane(Vector3.UP, transform.origin.y).intersects_ray(from, to)
 		
 		# Set current building preview to cursor position
-		CurrentSpawnable.translation = Vector3(round(cursorPos.x), cursorPos.y, round(cursorPos.z))
+		CurrentSpawnable.position = Vector3(round(cursorPos.x), cursorPos.y, round(cursorPos.z))
 		CurrentSpawnable.ActiveBuildableObject = true
 		
 		if AbleToBuild && canAfford(CurrentSpawnable):
@@ -84,7 +84,7 @@ func SpawnWallNarrow():
 func SetCurrentSpawnable(building):
 	if CurrentSpawnable != null:
 		CurrentSpawnable.queue_free()
-	CurrentSpawnable = building.instance()
+	CurrentSpawnable = building.instantiate()
 	CurrentSpawnable.SetDisabled(true)
 	get_tree().root.add_child(CurrentSpawnable)
 	GameManager.CurrentState = GameManager.State.Building
@@ -99,7 +99,7 @@ func PlaceBuilding():
 	building.spawned = true
 	chargeObject(building)
 	building.SetDisabled(false)
-	building.translation = CurrentSpawnable.translation
+	building.position = CurrentSpawnable.position
 	navMesh.bake_navigation_mesh(true)
 
 func ExitBuildingMode():

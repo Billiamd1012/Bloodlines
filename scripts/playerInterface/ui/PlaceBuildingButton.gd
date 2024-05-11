@@ -1,6 +1,6 @@
 extends Button
 
-onready var player_interface: PlayerInterface = get_node("/root/Room/PlayerInterface")
+@onready var player_interface: PlayerInterface = get_node("/root/Room/PlayerInterface")
 
 func _on_PlaceBuildingButton_pressed() -> void:
 	if self.text == "Enter building mode":

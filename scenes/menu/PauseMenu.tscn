@@ -14,20 +14,20 @@ anchor_right = 0.183
 anchor_bottom = 0.853
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
-margin_right = 171.0
-margin_bottom = 20.0
+offset_right = 171.0
+offset_bottom = 20.0
 text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 171.0
-margin_bottom = 44.0
+offset_top = 24.0
+offset_right = 171.0
+offset_bottom = 44.0
 text = "Options"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 171.0
-margin_bottom = 68.0
+offset_top = 48.0
+offset_right = 171.0
+offset_bottom = 68.0
 text = "Menu"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]

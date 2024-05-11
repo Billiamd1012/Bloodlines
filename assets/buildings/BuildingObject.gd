@@ -1,4 +1,4 @@
-extends StaticBody
+extends StaticBody3D
 
 
 # Declare member variables here. Examples:
@@ -7,23 +7,23 @@ extends StaticBody
 var objects : Array
 var ActiveBuildableObject : bool
 
-export var WoodCost : int
-export var StoneCost : int
-export var IronCost : int
-export var GoldCost : int
-export var PopulationCost : int
-export var IncreasePopCap : bool = false
-export var IncreaseCapAmount : int = 5
-export var IsStockpile : bool = false
+@export var WoodCost : int
+@export var StoneCost : int
+@export var IronCost : int
+@export var GoldCost : int
+@export var PopulationCost : int
+@export var IncreasePopCap : bool = false
+@export var IncreaseCapAmount : int = 5
+@export var IsStockpile : bool = false
 
-export var SpawnActor : bool = true
-export var Actor : PackedScene
+@export var SpawnActor : bool = true
+@export var Actor : PackedScene
 var currentActor
 var spawned : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Area.connect("area_entered", self, "_on_Area_area_entered")
-	$Area.connect("area_exited", self, "_on_Area_area_exited")
+	$Area3D.connect("area_entered", Callable(self, "_on_Area_area_entered"))
+	$Area3D.connect("area_exited", Callable(self, "_on_Area_area_exited"))
 	pass # Replace with function body.
 
 
@@ -32,11 +32,11 @@ func _ready():
 #	pass
 func runSpawn():
 	if SpawnActor:
-		var actor = Actor.instance()
+		var actor = Actor.instantiate()
 		currentActor = actor
 		actor.Hut = $SpawnPoint
 		get_tree().root.add_child(actor)
-		actor.global_translation = $SpawnPoint.global_translation
+		actor.global_position = $SpawnPoint.global_position
 	if IncreasePopCap:
 		GameManager.MaxPopulation += IncreaseCapAmount
 		
@@ -58,11 +58,11 @@ func _on_Area_area_entered(area):
 
 func _on_Area_area_exited(area):
 	if ActiveBuildableObject:
-		objects.remove(objects.find(area))
+		objects.remove_at(objects.find(area))
 		print(objects)
 		if(objects.size() <= 0):
 			BuildManager.AbleToBuild = true
 	pass # Replace with function body.
 
 func SetDisabled(disabled : bool):
-	$CollisionShape.disabled = disabled
+	$CollisionShape3D.disabled = disabled

@@ -1,275 +1,258 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://cvixuoh7mlxp8"]
 
-[ext_resource path="res://scenes/playerInterface/Camera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/materials/Ground.tres" type="Material" id=2]
-[ext_resource path="res://scripts/InterfaceManager.gd" type="Script" id=3]
-[ext_resource path="res://scenes/menu/PauseMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/playerInterface/MouseArea2D.gd" type="Script" id=6]
+[ext_resource type="PackedScene" uid="uid://cfho5gvtnrob8" path="res://scenes/playerInterface/Camera.tscn" id="1"]
+[ext_resource type="Material" path="res://assets/materials/Ground.tres" id="2"]
+[ext_resource type="Script" path="res://scripts/InterfaceManager.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/menu/PauseMenu.tscn" id="4"]
+[ext_resource type="Script" path="res://scripts/playerInterface/MouseArea2D.gd" id="6"]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 512.75, 49.375 )
+[sub_resource type="NavigationMesh" id="6"]
+vertices = PackedVector3Array(-5.75, 0, -20, -5, 0, -20, -5, 0, -249.5, -6.25, 0, -19, -5.75, 0, -20, -5, 0, -249.5, -249.5, 0, -249.5, -249.5, 0, -19, 17.25, 0, 4.75, 18.5, 0, 6, 19.75, 0, 6, -4, 0, -19.75, -4, 0, -18.5, 17.25, 0, 4.75, -4, 0, -19.75, 17.25, 0, 4.75, 19.75, 0, 6, 249.5, 0, 7, 249.5, 0, -249.5, -5, 0, -249.5, 19.75, 0, 6, 20, 0, 7, 249.5, 0, 7, -5, 0, -249.5, -5, 0, -20, -4, 0, -19.75, -12.5, 0, 2, -6.25, 0, -18.75, -6.25, 0, -19, -249.5, 0, -19, -249.5, 0, 3.25, -13.75, 0, 2.5, -249.5, 0, 3.25, -13.75, 0, 3.25, -13.75, 0, 2.5, -12.5, 0, 2, -11.5, 0, 3, -5.25, 0, -17.75, -6.25, 0, -18.75, -4.5, 0, -17.75, -5.25, 0, -17.75, -11.5, 0, 3, -4.5, 0, -17.75, -11.5, 0, 3, -11.5, 0, 3.5, 17.25, 0, 4.75, -4, 0, -18.5, -13.75, 0, 4, -13.75, 0, 3.25, -249.5, 0, 3.25, -12.75, 0, 4.25, -13.75, 0, 4, -249.5, 0, 3.25, -249.5, 0, 249.5, -12.75, 0, 249.5, 17.75, 0, 6.75, 18.5, 0, 6, 17.25, 0, 4.75, -11.5, 0, 3.5, -12.25, 0, 4.25, 17.75, 0, 7.5, 17.75, 0, 6.75, -12.25, 0, 4.25, 17.75, 0, 7.5, -12.25, 0, 4.25, -12.75, 0, 4.25, -12.75, 0, 249.5, 19, 0, 249.5, 19, 0, 8.25, 249.5, 0, 7, 20, 0, 7, 20, 0, 7.75, 249.5, 0, 7, 20, 0, 7.75, 19, 0, 8.25, 19, 0, 249.5, 249.5, 0, 249.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(13, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 19), PackedInt32Array(17, 19, 18), PackedInt32Array(22, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 31), PackedInt32Array(28, 31, 29), PackedInt32Array(29, 31, 30), PackedInt32Array(34, 33, 32), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(41, 40, 39), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 46), PackedInt32Array(44, 46, 45), PackedInt32Array(49, 48, 47), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 54), PackedInt32Array(52, 54, 53), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(58, 55, 59), PackedInt32Array(62, 61, 60), PackedInt32Array(64, 63, 65), PackedInt32Array(65, 63, 68), PackedInt32Array(65, 68, 67), PackedInt32Array(65, 67, 66), PackedInt32Array(71, 70, 69), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(75, 72, 76)]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="BoxMesh" id="BoxMesh_kovsu"]
+material = ExtResource("2")
 
-[sub_resource type="NavigationMesh" id=6]
-vertices = PoolVector3Array( -87.75, -0.424927, -99.5, -99.5, -0.424927, -99.5, -99.5, -0.424927, -89.5, -87.75, -0.424927, -99.5, -99.5, -0.424927, -89.5, -99.5, -0.424927, -79.5, -76, -0.424927, -99.5, -87.75, -0.424927, -99.5, -99.5, -0.424927, -79.5, -99.5, -0.424927, -69.5, -40.5, -0.424927, -99.5, -52.25, -0.424927, -99.5, -99.5, -0.424927, -39.25, -99.5, -0.424927, -29.25, -64.25, -0.424927, -99.5, -76, -0.424927, -99.5, -99.5, -0.424927, -69.5, -99.5, -0.424927, -59.25, -6.75, -0.424927, -19, -6, -0.424927, -20.5, -17, -0.424927, -99.5, -28.75, -0.424927, -99.5, -64.25, -0.424927, -99.5, -99.5, -0.424927, -59.25, -99.5, -0.424927, -49.25, -52.25, -0.424927, -99.5, -64.25, -0.424927, -99.5, -99.5, -0.424927, -49.25, -99.5, -0.424927, -39.25, -6.75, -0.424927, -19, -28.75, -0.424927, -99.5, -40.5, -0.424927, -99.5, -99.5, -0.424927, -29.25, -99.5, -0.424927, -19, -6, -0.424927, -20.5, -5, -0.424927, -20.5, -5, -0.424927, -99.5, -17, -0.424927, -99.5, 17.5, -0.424927, 4.75, 18.25, -0.424927, 5.5, 20, -0.424927, 5.5, -3.5, -0.424927, -20, -3.5, -0.424927, -18.25, 99.5, -0.424927, -93, 99.5, -0.424927, -99.5, 92.75, -0.424927, -99.5, 99.5, -0.424927, -93, 92.75, -0.424927, -99.5, 86.25, -0.424927, -99.5, 99.5, -0.424927, -86.25, 99.5, -0.424927, -39.75, 40.5, -0.424927, -99.5, 34, -0.424927, -99.5, -3.5, -0.424927, -20, 20, -0.424927, 5.5, 99.5, -0.424927, -33, 99.5, -0.424927, -79.75, 99.5, -0.424927, -86.25, 86.25, -0.424927, -99.5, 79.75, -0.424927, -99.5, 14.5, -0.424927, -99.5, 8, -0.424927, -99.5, -3.5, -0.424927, -20, 20, -0.424927, 5.5, 99.5, -0.424927, -26.5, 99.5, -0.424927, -33, 99.5, -0.424927, -79.75, 79.75, -0.424927, -99.5, 73.25, -0.424927, -99.5, 99.5, -0.424927, -73, 20, -0.424927, 5.5, 99.5, -0.424927, -6.5, 99.5, -0.424927, -13.25, 21, -0.424927, -99.5, 14.5, -0.424927, -99.5, -3.5, -0.424927, -20, 99.5, -0.424927, -73, 73.25, -0.424927, -99.5, 66.75, -0.424927, -99.5, 99.5, -0.424927, -66.5, 20, -0.424927, 5.5, 99.5, -0.424927, -13.25, 99.5, -0.424927, -19.75, 99.5, -0.424927, -66.5, 66.75, -0.424927, -99.5, 60.25, -0.424927, -99.5, 99.5, -0.424927, -59.75, 34, -0.424927, -99.5, 27.5, -0.424927, -99.5, -3.5, -0.424927, -20, 99.5, -0.424927, -59.75, 60.25, -0.424927, -99.5, 53.75, -0.424927, -99.5, 99.5, -0.424927, -53, 27.5, -0.424927, -99.5, 21, -0.424927, -99.5, -3.5, -0.424927, -20, 99.5, -0.424927, -53, 53.75, -0.424927, -99.5, 47.25, -0.424927, -99.5, 99.5, -0.424927, -46.25, 20, -0.424927, 5.5, 99.5, -0.424927, -19.75, 99.5, -0.424927, -26.5, 1.5, -0.424927, -99.5, -5, -0.424927, -99.5, -5, -0.424927, -20.5, 20.5, -0.424927, 7, 99.5, -0.424927, 7, 99.5, -0.424927, 0.25, 99.5, -0.424927, -39.75, 99.5, -0.424927, -46.25, 47.25, -0.424927, -99.5, 40.5, -0.424927, -99.5, 1.5, -0.424927, -99.5, -5, -0.424927, -20.5, -3.5, -0.424927, -20, 8, -0.424927, -99.5, 20, -0.424927, 5.5, 20.5, -0.424927, 7, 99.5, -0.424927, 0.25, 99.5, -0.424927, -6.5, -5.5, 7.07507, -19.5, -5.5, 7.07507, -18.5, -4.5, 7.07507, -18.5, -4.5, 7.07507, -19.5, -5.25, -0.424927, -19.25, -5.25, -0.424927, -18.75, -4.75, -0.424927, -18.75, -4.75, -0.424927, -19.25, -13.5, -0.424927, 1.5, -12.25, -0.424927, 1.5, -6.5, -0.424927, -18.25, -13.5, -0.424927, 1.5, -6.5, -0.424927, -18.25, -6.75, -0.424927, -19, -99.5, -0.424927, -19, -99.5, -0.424927, -8, -14.25, -0.424927, 2.25, -99.5, -0.424927, 3.25, -14.25, -0.424927, 3.25, -14.25, -0.424927, 2.25, -99.5, -0.424927, -8, -12.25, -0.424927, 1.5, -11.25, -0.424927, 2.5, -5.5, -0.424927, -17.25, -6.5, -0.424927, -18.25, -4.25, -0.424927, -17.25, -5.5, -0.424927, -17.25, -11.25, -0.424927, 2.5, -3.5, -0.424927, -18.25, -4.25, -0.424927, -17.25, -11.25, -0.424927, 2.5, -11.25, -0.424927, 4, 17.5, -0.424927, 4.75, -13.25, 7.07507, 2.75, -13.25, 7.07507, 3.75, -12.25, 7.07507, 3.75, -12.5, 7.07507, 2.5, -13, -0.424927, 3, -13, -0.424927, 3.5, -12.5, -0.424927, 3.5, -12.5, -0.424927, 3, -99.5, -0.424927, 93.25, -99.5, -0.424927, 99.5, -88.75, -0.424927, 99.5, -99.5, -0.424927, 87.25, -99.5, -0.424927, 93.25, -88.75, -0.424927, 99.5, -78, -0.424927, 99.5, -14.25, -0.424927, 4.25, -14.25, -0.424927, 3.25, -99.5, -0.424927, 3.25, -99.5, -0.424927, 15.25, -99.5, -0.424927, 75.25, -99.5, -0.424927, 87.25, -78, -0.424927, 99.5, -67.25, -0.424927, 99.5, -12.75, -0.424927, 4.75, -99.5, -0.424927, 27.25, -99.5, -0.424927, 39.25, -34.5, -0.424927, 99.5, -23.75, -0.424927, 99.5, -99.5, -0.424927, 63.25, -99.5, -0.424927, 75.25, -67.25, -0.424927, 99.5, -56.25, -0.424927, 99.5, -12.75, -0.424927, 4.75, -14.25, -0.424927, 4.25, -99.5, -0.424927, 15.25, -99.5, -0.424927, 27.25, -99.5, -0.424927, 51.25, -99.5, -0.424927, 63.25, -56.25, -0.424927, 99.5, -45.5, -0.424927, 99.5, -23.75, -0.424927, 99.5, -12.75, -0.424927, 99.5, -12.75, -0.424927, 4.75, -99.5, -0.424927, 39.25, -99.5, -0.424927, 51.25, -45.5, -0.424927, 99.5, -34.5, -0.424927, 99.5, 17.5, -0.424927, 6.25, 18.25, -0.424927, 5.5, 17.5, -0.424927, 4.75, -11.25, -0.424927, 4, -12, -0.424927, 4.75, 17.5, -0.424927, 8, 17.5, -0.424927, 6.25, -12, -0.424927, 4.75, 17.5, -0.424927, 8, -12, -0.424927, 4.75, -12.75, -0.424927, 4.75, -12.75, -0.424927, 99.5, -5, -0.424927, 99.5, 19, -0.424927, 8.75, -5, -0.424927, 99.5, 3, -0.424927, 99.5, 19, -0.424927, 8.75, 11, -0.424927, 99.5, 19, -0.424927, 99.5, 19, -0.424927, 8.75, 3, -0.424927, 99.5, 11, -0.424927, 99.5, 19, -0.424927, 8.75, 18.5, 7.07507, 6.5, 18.5, 7.07507, 7.5, 19.5, 7.07507, 7.5, 19.5, 7.07507, 6.5, 18.75, -0.424927, 6.75, 18.75, -0.424927, 7.25, 19.25, -0.424927, 7.25, 19.25, -0.424927, 6.75, 89.25, -0.424927, 99.5, 99.5, -0.424927, 99.5, 99.5, -0.424927, 87.75, 79.25, -0.424927, 99.5, 89.25, -0.424927, 99.5, 99.5, -0.424927, 87.75, 79.25, -0.424927, 99.5, 99.5, -0.424927, 87.75, 99.5, -0.424927, 76.25, 69.25, -0.424927, 99.5, 39, -0.424927, 99.5, 99.5, -0.424927, 53.25, 99.5, -0.424927, 41.5, 29, -0.424927, 99.5, 69.25, -0.424927, 99.5, 99.5, -0.424927, 76.25, 99.5, -0.424927, 64.75, 59.25, -0.424927, 99.5, 99.5, -0.424927, 18.5, 20.5, -0.424927, 8, 19, -0.424927, 8.75, 99.5, -0.424927, 30, 49, -0.424927, 99.5, 59.25, -0.424927, 99.5, 99.5, -0.424927, 64.75, 49, -0.424927, 99.5, 99.5, -0.424927, 64.75, 99.5, -0.424927, 53.25, 39, -0.424927, 99.5, 99.5, -0.424927, 41.5, 99.5, -0.424927, 30, 19, -0.424927, 8.75, 19, -0.424927, 99.5, 29, -0.424927, 99.5, 99.5, -0.424927, 7, 20.5, -0.424927, 7, 20.5, -0.424927, 8, 99.5, -0.424927, 18.5 )
-polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 9 ), PoolIntArray( 9, 7, 6 ), PoolIntArray( 12, 11, 13 ), PoolIntArray( 13, 11, 10 ), PoolIntArray( 16, 15, 17 ), PoolIntArray( 17, 15, 14 ), PoolIntArray( 19, 18, 20 ), PoolIntArray( 20, 18, 21 ), PoolIntArray( 24, 23, 22 ), PoolIntArray( 27, 26, 28 ), PoolIntArray( 28, 26, 25 ), PoolIntArray( 30, 29, 31 ), PoolIntArray( 31, 29, 32 ), PoolIntArray( 32, 29, 33 ), PoolIntArray( 35, 34, 36 ), PoolIntArray( 36, 34, 37 ), PoolIntArray( 39, 38, 40 ), PoolIntArray( 40, 38, 42 ), PoolIntArray( 40, 42, 41 ), PoolIntArray( 45, 44, 43 ), PoolIntArray( 47, 46, 48 ), PoolIntArray( 48, 46, 49 ), PoolIntArray( 51, 50, 52 ), PoolIntArray( 52, 50, 55 ), PoolIntArray( 52, 55, 53 ), PoolIntArray( 53, 55, 54 ), PoolIntArray( 57, 56, 58 ), PoolIntArray( 58, 56, 59 ), PoolIntArray( 62, 61, 60 ), PoolIntArray( 65, 64, 63 ), PoolIntArray( 67, 66, 68 ), PoolIntArray( 68, 66, 69 ), PoolIntArray( 72, 71, 70 ), PoolIntArray( 75, 74, 73 ), PoolIntArray( 77, 76, 78 ), PoolIntArray( 78, 76, 79 ), PoolIntArray( 82, 81, 80 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 89, 88, 87 ), PoolIntArray( 91, 90, 92 ), PoolIntArray( 92, 90, 93 ), PoolIntArray( 96, 95, 94 ), PoolIntArray( 98, 97, 99 ), PoolIntArray( 99, 97, 100 ), PoolIntArray( 103, 102, 101 ), PoolIntArray( 106, 105, 104 ), PoolIntArray( 109, 108, 107 ), PoolIntArray( 111, 110, 112 ), PoolIntArray( 112, 110, 113 ), PoolIntArray( 115, 114, 116 ), PoolIntArray( 116, 114, 117 ), PoolIntArray( 119, 118, 120 ), PoolIntArray( 120, 118, 121 ), PoolIntArray( 125, 124, 122 ), PoolIntArray( 122, 124, 123 ), PoolIntArray( 129, 128, 126 ), PoolIntArray( 126, 128, 127 ), PoolIntArray( 132, 131, 130 ), PoolIntArray( 134, 133, 135 ), PoolIntArray( 135, 133, 138 ), PoolIntArray( 135, 138, 137 ), PoolIntArray( 135, 137, 136 ), PoolIntArray( 140, 139, 141 ), PoolIntArray( 141, 139, 142 ), PoolIntArray( 146, 145, 143 ), PoolIntArray( 143, 145, 144 ), PoolIntArray( 149, 148, 147 ), PoolIntArray( 151, 150, 152 ), PoolIntArray( 152, 150, 153 ), PoolIntArray( 153, 150, 154 ), PoolIntArray( 155, 158, 156 ), PoolIntArray( 156, 158, 157 ), PoolIntArray( 162, 161, 159 ), PoolIntArray( 159, 161, 160 ), PoolIntArray( 165, 164, 163 ), PoolIntArray( 167, 166, 168 ), PoolIntArray( 168, 166, 169 ), PoolIntArray( 171, 170, 172 ), PoolIntArray( 172, 170, 173 ), PoolIntArray( 175, 174, 176 ), PoolIntArray( 176, 174, 177 ), PoolIntArray( 179, 178, 180 ), PoolIntArray( 180, 178, 181 ), PoolIntArray( 181, 178, 182 ), PoolIntArray( 184, 183, 185 ), PoolIntArray( 185, 183, 186 ), PoolIntArray( 188, 187, 189 ), PoolIntArray( 189, 187, 190 ), PoolIntArray( 193, 192, 194 ), PoolIntArray( 194, 192, 191 ), PoolIntArray( 197, 196, 195 ), PoolIntArray( 200, 199, 201 ), PoolIntArray( 201, 199, 198 ), PoolIntArray( 203, 202, 204 ), PoolIntArray( 204, 202, 205 ), PoolIntArray( 205, 202, 206 ), PoolIntArray( 209, 208, 207 ), PoolIntArray( 211, 210, 212 ), PoolIntArray( 212, 210, 215 ), PoolIntArray( 212, 215, 214 ), PoolIntArray( 212, 214, 213 ), PoolIntArray( 218, 217, 216 ), PoolIntArray( 221, 220, 219 ), PoolIntArray( 224, 223, 222 ), PoolIntArray( 228, 227, 225 ), PoolIntArray( 225, 227, 226 ), PoolIntArray( 232, 231, 229 ), PoolIntArray( 229, 231, 230 ), PoolIntArray( 235, 234, 233 ), PoolIntArray( 238, 237, 236 ), PoolIntArray( 240, 239, 241 ), PoolIntArray( 241, 239, 242 ), PoolIntArray( 243, 246, 244 ), PoolIntArray( 244, 246, 245 ), PoolIntArray( 247, 250, 248 ), PoolIntArray( 248, 250, 249 ), PoolIntArray( 252, 251, 253 ), PoolIntArray( 253, 251, 254 ), PoolIntArray( 255, 257, 256 ), PoolIntArray( 258, 261, 259 ), PoolIntArray( 259, 261, 260 ), PoolIntArray( 263, 262, 264 ), PoolIntArray( 264, 262, 266 ), PoolIntArray( 264, 266, 265 ), PoolIntArray( 268, 267, 269 ), PoolIntArray( 269, 267, 270 ) ]
+[sub_resource type="BoxShape3D" id="BoxShape3D_eo277"]
+size = Vector3(500, 1, 500)
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CylinderMesh" id="7"]
 
-[sub_resource type="Skin" id=2]
-
-[sub_resource type="BoxShape" id=3]
-
-[sub_resource type="CylinderMesh" id=7]
-
-[sub_resource type="CylinderShape" id=8]
+[sub_resource type="CylinderShape3D" id="8"]
 height = 13.8418
 
-[node name="Room" type="Spatial"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ic5q"]
+height = 1.0
 
-[node name="PauseMenu" parent="." instance=ExtResource( 4 )]
+[sub_resource type="CircleShape2D" id="5"]
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(1150.75, 98.75)
+
+[node name="Room" type="Node3D"]
+
+[node name="PauseMenu" parent="." instance=ExtResource("4")]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CameraWrapper" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.91256, 0 )
+[node name="CameraWrapper" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.823, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
+navigation_mesh = SubResource("6")
+
+[node name="Ground" type="StaticBody3D" parent="NavigationRegion3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground"]
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 0, 0)
+mesh = SubResource("BoxMesh_kovsu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground"]
+shape = SubResource("BoxShape3D_eo277")
+
+[node name="Tree" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9714, -0.277464, 7.00252)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree"]
+transform = Transform3D(1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0)
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree"]
+shape = SubResource("8")
+
+[node name="StonePile" type="StaticBody3D" parent="NavigationRegion3D" groups=["stone"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3065, -0.277464, 25.7672)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StonePile"]
+transform = Transform3D(1, 0, 0, 0, 0.377657, 0, 0, 0, 1, 0, -0.2738, 0)
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StonePile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.272957, 0)
+shape = SubResource("CylinderShape3D_8ic5q")
+
+[node name="Tree2" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00522, -0.277464, -18.9607)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree2"]
+transform = Transform3D(1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0)
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree2"]
+shape = SubResource("8")
+
+[node name="Tree3" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7329, -0.277464, 3.21096)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree3"]
+transform = Transform3D(1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0)
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree3"]
+shape = SubResource("8")
+
+[node name="MouseArea" type="Area2D" parent="."]
+script = ExtResource("6")
+
+[node name="MouseAreaCollider" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("5")
 
 [node name="Interface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -92.0
-script = ExtResource( 3 )
+offset_top = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3")
 
 [node name="InterfaceBackground" type="Panel" parent="Interface"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -96.0
+offset_top = -96.0
 
 [node name="BuildingTabContainer" type="TabContainer" parent="Interface"]
-margin_left = 127.0
-margin_top = -1.0
-margin_right = 1019.0
-margin_bottom = 87.0
-tab_align = 0
+layout_mode = 0
+offset_left = 127.0
+offset_top = -1.0
+offset_right = 1019.0
+offset_bottom = 87.0
 
 [node name="Industry" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+layout_mode = 2
 
 [node name="BuildStockpile" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-margin_right = 70.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Stockpile"
 
 [node name="BuildWoodCutter" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-margin_left = 74.0
-margin_right = 173.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Wood Cutters"
 
 [node name="BuildStoneCutter" type="Button" parent="Interface/BuildingTabContainer/Industry"]
-margin_left = 177.0
-margin_right = 275.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Stone Cutters"
 
 [node name="Food" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+layout_mode = 2
 
 [node name="BuildOrchard" type="Button" parent="Interface/BuildingTabContainer/Food"]
-margin_right = 95.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Orchard"
 
 [node name="BuildGranary" type="Button" parent="Interface/BuildingTabContainer/Food"]
-margin_right = 95.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Granary"
 
 [node name="Living" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+layout_mode = 2
 
 [node name="BuildHouse" type="Button" parent="Interface/BuildingTabContainer/Living"]
-margin_right = 95.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "House"
 
 [node name="Walls" type="HBoxContainer" parent="Interface/BuildingTabContainer"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+layout_mode = 2
 
 [node name="BuildWall" type="Button" parent="Interface/BuildingTabContainer/Walls"]
-margin_right = 95.0
-margin_bottom = 52.0
+layout_mode = 2
 text = "Wall"
 
 [node name="BuildBarArea" type="Area2D" parent="Interface"]
 
 [node name="BuildBarAreaCollider" type="CollisionShape2D" parent="Interface/BuildBarArea"]
-position = Vector2( 512, 44 )
-shape = SubResource( 4 )
+position = Vector2(574.625, 44)
+shape = SubResource("4")
 
 [node name="ResourcesControl" type="Control" parent="Interface"]
-margin_left = 6.0
-margin_top = 3.0
-margin_right = 132.0
-margin_bottom = 63.0
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 124.0
+offset_bottom = 83.0
 
 [node name="ResourcesBox" type="VBoxContainer" parent="Interface/ResourcesControl"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 3.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.67, 0.67)
 
 [node name="Wood" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-margin_right = 126.0
-margin_bottom = 14.0
+layout_mode = 2
 text = "Wood:"
 
 [node name="WoodValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Wood"]
-margin_left = 50.0
-margin_right = 141.0
-margin_bottom = 31.0
+layout_mode = 0
+offset_left = 50.0
+offset_right = 141.0
+offset_bottom = 31.0
 text = "100
 "
 
 [node name="Stone" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-margin_top = 18.0
-margin_right = 126.0
-margin_bottom = 32.0
+layout_mode = 2
 text = "Stone:"
 
 [node name="StoneValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Stone"]
-margin_left = 51.0
-margin_right = 141.0
-margin_bottom = 31.0
+layout_mode = 0
+offset_left = 51.0
+offset_right = 141.0
+offset_bottom = 31.0
 text = "100
 "
 
 [node name="Iron" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-margin_top = 36.0
-margin_right = 126.0
-margin_bottom = 50.0
+layout_mode = 2
 text = "Iron:"
 
 [node name="IronValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Iron"]
-margin_left = 51.0
-margin_right = 141.0
-margin_bottom = 31.0
+layout_mode = 0
+offset_left = 51.0
+offset_right = 141.0
+offset_bottom = 31.0
 text = "100
 "
 
 [node name="Food" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-margin_top = 54.0
-margin_right = 126.0
-margin_bottom = 68.0
+layout_mode = 2
 text = "Food:"
 
 [node name="FoodValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Food"]
-margin_left = 51.0
-margin_right = 141.0
-margin_bottom = 31.0
+layout_mode = 0
+offset_left = 51.0
+offset_right = 141.0
+offset_bottom = 31.0
 text = "100
 "
 
 [node name="Gold" type="Label" parent="Interface/ResourcesControl/ResourcesBox"]
-margin_top = 72.0
-margin_right = 126.0
-margin_bottom = 86.0
+layout_mode = 2
 text = "Gold:"
 
 [node name="GoldValue" type="Label" parent="Interface/ResourcesControl/ResourcesBox/Gold"]
-margin_left = 52.0
-margin_right = 141.0
-margin_bottom = 31.0
+layout_mode = 0
+offset_left = 52.0
+offset_right = 141.0
+offset_bottom = 31.0
 text = "100
 "
-
-[node name="MouseArea" type="Area2D" parent="."]
-script = ExtResource( 6 )
-
-[node name="MouseAreaCollider" type="CollisionShape2D" parent="MouseArea"]
-shape = SubResource( 5 )
-
-[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="." groups=["NavMesh"]]
-navmesh = SubResource( 6 )
-
-[node name="Ground" type="StaticBody" parent="NavigationMeshInstance"]
-transform = Transform( 100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, -1, 0 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/Ground"]
-transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0 )
-layers = 32770
-mesh = SubResource( 1 )
-skin = SubResource( 2 )
-material/0 = ExtResource( 2 )
-
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Ground"]
-transform = Transform( 1, 0, 0, 0, 1, -1.11022e-15, 0, -1.13687e-15, 1, 0.000724182, 0.280361, -0.000261955 )
-shape = SubResource( 3 )
-
-[node name="Tree" type="StaticBody" parent="NavigationMeshInstance" groups=["tree"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9714, -0.277464, 7.00252 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/Tree"]
-transform = Transform( 1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0 )
-mesh = SubResource( 7 )
-
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Tree"]
-shape = SubResource( 8 )
-
-[node name="StonePile" type="StaticBody" parent="NavigationMeshInstance" groups=["stone"]]
-transform = Transform( 1.62971, 0, 0, 0, 0.149654, 0, 0, 0, 1.7091, 39.3065, -0.277464, 25.7672 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/StonePile"]
-transform = Transform( 1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0 )
-mesh = SubResource( 7 )
-
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/StonePile"]
-shape = SubResource( 8 )
-
-[node name="Tree2" type="StaticBody" parent="NavigationMeshInstance" groups=["tree"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00522, -0.277464, -18.9607 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/Tree2"]
-transform = Transform( 1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0 )
-mesh = SubResource( 7 )
-
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Tree2"]
-shape = SubResource( 8 )
-
-[node name="Tree3" type="StaticBody" parent="NavigationMeshInstance" groups=["tree"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7329, -0.277464, 3.21096 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/Tree3"]
-transform = Transform( 1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0 )
-mesh = SubResource( 7 )
-
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Tree3"]
-shape = SubResource( 8 )
 
 [connection signal="button_down" from="Interface/BuildingTabContainer/Industry/BuildStockpile" to="Interface" method="_on_BuildStockpile_button_down"]
 [connection signal="button_down" from="Interface/BuildingTabContainer/Industry/BuildWoodCutter" to="Interface" method="_on_BuildWoodCutter_button_down"]

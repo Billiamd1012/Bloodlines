@@ -1,9 +1,9 @@
 extends Node2D
 class_name PlayerInterface
 
-onready var node_building_manager: Spatial = $BuildingManager
+@onready var node_building_manager: Node3D = $BuildingManager
 
-var current_building: Spatial
+var current_building: Node3D
 var building_placer_can_place:bool = false
 var building_placer_location:Vector3 = Vector3.ZERO
 
@@ -22,12 +22,12 @@ func set_interface_input_mode(new_value) -> void:
 func _physics_process(delta:float) -> void:
 	if interface_input_mode == 1:
 		var mouse_pos:Vector2 = get_global_mouse_position()
-		var camera:Camera = get_viewport().get_camera()
+		var camera:Camera3D = get_viewport().get_camera_3d()
 		
 		var ray_from: Vector3 = camera.project_ray_origin(mouse_pos)
 		var ray_to: Vector3 = ray_from + camera.project_ray_normal(mouse_pos) * 1000.0
 
-		var space_state: PhysicsDirectSpaceState = camera.get_world().direct_space_state
+		var space_state: PhysicsDirectSpaceState3D = camera.get_world_3d().direct_space_state
 		var result = space_state.intersect_ray(ray_from, ray_to, [], 0b10)
 		
 		if result:
@@ -51,7 +51,7 @@ func _input(event:InputEvent) -> void:
 		
 		if interface_input_mode == 1:
 			if building_placer_can_place and building_placer_location != Vector3.ZERO:
-				var building_node:Spatial = current_building.duplicate()
+				var building_node:Node3D = current_building.duplicate()
 				get_parent().add_child(building_node)
 				building_node.transform.origin = building_placer_location
 				

@@ -1,4 +1,4 @@
-extends KinematicBody
+extends CharacterBody3D
 
 enum Task{
 	GettingResources,
@@ -10,19 +10,19 @@ enum Task{
 var CurrentTask = Task.Searching
 var Hut
 var HeldResourceAmount := 0
-export var WalkSpeed : int = 6
-export var ResourceGenerationAmount := 0
-onready var navagent : NavigationAgent = $NavigationAgent
+@export var WalkSpeed : int = 6
+@export var ResourceGenerationAmount := 0
+@onready var navagent : NavigationAgent3D = $NavigationAgent3D
 var runOnce := true
-export(String, "stone", "tree", "iron") var ResourceNameToGet
+@export var ResourceNameToGet : String# (String, "stone", "tree", "iron")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	match CurrentTask:
 		Task.GettingResources:
 			if runOnce:
 				runOnce = false
-				yield(get_tree().create_timer(2.0), "timeout")
+				await get_tree().create_timer(2.0).timeout
 				runOnce = true
 				HeldResourceAmount = ResourceGenerationAmount
 				CurrentTask = Task.Delivering
@@ -30,9 +30,9 @@ func _process(delta):
 			var resources = get_tree().get_nodes_in_group(ResourceNameToGet)
 			var nearestResourceObject = resources[0]
 			for i in resources:
-				if i.translation.distance_to(translation) < nearestResourceObject.translation.distance_to(translation):
+				if i.position.distance_to(position) < nearestResourceObject.position.distance_to(position):
 					nearestResourceObject = i
-			navagent.set_target_location(nearestResourceObject.global_translation)
+			navagent.set_target_position(nearestResourceObject.global_position)
 			CurrentTask = Task.Walking
 		Task.Delivering: 
 			var stockpiles = get_tree().get_nodes_in_group("Stockpile")
@@ -41,15 +41,15 @@ func _process(delta):
 					var nearestStockpileObject = stockpiles[0]
 					for i in stockpiles:
 						if i.spawned:
-							if i.translation.distance_to(translation) < nearestStockpileObject.translation.distance_to(translation):
+							if i.position.distance_to(position) < nearestStockpileObject.position.distance_to(position):
 								nearestStockpileObject = i
-					navagent.set_target_location(nearestStockpileObject.get_node("SpawnPoint").global_translation)
+					navagent.set_target_position(nearestStockpileObject.get_node("SpawnPoint").global_position)
 					CurrentTask = Task.Walking
 				else:
-					navagent.set_target_location(Hut.global_translation)
+					navagent.set_target_position(Hut.global_position)
 					CurrentTask = Task.Walking
 			else:
-				navagent.set_target_location(Hut.global_translation)
+				navagent.set_target_position(Hut.global_position)
 				CurrentTask = Task.Walking
 		Task.Walking:
 			if navagent.is_navigation_finished():
@@ -67,9 +67,10 @@ func _process(delta):
 					CurrentTask = Task.Searching
 				return
 				
-			var targetpos = navagent.get_next_location()
-			var direction = global_translation.direction_to(targetpos)
-			var velocity = direction * WalkSpeed
-			move_and_slide(velocity)
+			var targetpos = navagent.get_next_path_position()
+			var direction = global_position.direction_to(targetpos)
+			var move_velocity = direction * WalkSpeed
+			set_velocity(move_velocity)
+			move_and_slide()
 			
 	$Label3D.text = str(CurrentTask)

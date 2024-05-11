@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var sens: float = 1  # Sensitivity of the camera movement
 var move: Vector3 = Vector3(0, 0, 0)  # Class variable to store the movement
@@ -9,7 +9,7 @@ func _ready():
 	
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 	var screen_size: Vector2 = get_viewport().get_visible_rect().size
 
@@ -36,12 +36,12 @@ func _process(delta: float) -> void:
 	# Zoom in and out
 	
 	if Input.is_action_just_released("MouseWheelUp"):
-		if $Camera.global_translation.distance_to(global_translation) > 20:
-			$Camera.global_translation -= $Camera.global_transform.basis.z * 2
+		if $Camera3D.global_position.distance_to(global_position) > 20:
+			$Camera3D.global_position -= $Camera3D.global_transform.basis.z * 2
 
 	if Input.is_action_just_released("MouseWheelDown"):
-		if $Camera.global_translation.distance_to(global_translation) < 50:
-			$Camera.global_translation += $Camera.global_transform.basis.z * 2
+		if $Camera3D.global_position.distance_to(global_position) < 50:
+			$Camera3D.global_position += $Camera3D.global_transform.basis.z * 2
 	
 	move = move.normalized() * sens  # Normalize the move vector before applying the speed
 	

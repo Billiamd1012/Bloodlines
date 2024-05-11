@@ -32,12 +32,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Population < MaxPopulation && spawnReady && Happiness > 0 && firePitSpaces.size() > 0:
 		spawnReady = false
-		yield(get_tree().create_timer(3.0), "timeout")
+		await get_tree().create_timer(3.0).timeout
 		spawnReady = true
-		var citizen = Citizen.instance()
+		var citizen = Citizen.instantiate()
 		firePitSpaces[0].add_child(citizen)
 		citizen.FirePitPos = firePitSpaces[0]
 		citizen.SpawnObjectSetup()
@@ -46,13 +46,13 @@ func _process(delta):
 		AlvPopulation += 1
 	elif spawnReady && Happiness < 0:
 		spawnReady = false
-		yield(get_tree().create_timer(3.0), "timeout")
+		await get_tree().create_timer(3.0).timeout
 		spawnReady = true
 		if AlvPopulation > 0:
 			RemoveCitizen(1)
 	if foodBool:
 		foodBool = false
-		yield(get_tree().create_timer(6.0), "timeout")
+		await get_tree().create_timer(6.0).timeout
 		Food -= Population
 		if Food < 0:
 			Food = 0
@@ -79,9 +79,9 @@ func _process(delta):
 func RemoveCitizen(Cost : int):
 	for i in range(0, Cost, 1):
 		firePitSpaces.append(occupiedFirePitSpaces[0])
-		var temp : Spatial = occupiedFirePitSpaces[0]
+		var temp : Node3D = occupiedFirePitSpaces[0]
 		delete_children(temp)
-		occupiedFirePitSpaces.remove(0)
+		#occupiedFirePitSpaces.remove(0)
 		AlvPopulation -= 1
 		Population -= 1
 

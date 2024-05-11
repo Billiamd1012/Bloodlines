@@ -1,11 +1,11 @@
-extends Spatial
+extends Node3D
 
 
-onready var unit_data: Dictionary = {}
+@onready var unit_data: Dictionary = {}
 
-onready var area: Area = $Area
-onready var area_colshape: CollisionShape = $Area/CollisionShape
-onready var model: MeshInstance = $BuildingPreview
+@onready var area: Area3D = $Area3D
+@onready var area_colshape: CollisionShape3D = $Area3D/CollisionShape3D
+@onready var model: MeshInstance3D = $BuildingPreview
 
 func enable_area() -> void:area_colshape.disabled = false
 func disable_area() -> void:area_colshape.disabled = true
@@ -17,7 +17,7 @@ func placement_check() -> bool:
 #		print("Building is overlapping")
 #		return false
 	
-	var area_collision_shape:BoxShape = area_colshape.get_shape()
+	var area_collision_shape:BoxShape3D = area_colshape.get_shape()
 	var area_size: Vector3 = area_collision_shape.extents * 0.5
 	var points_to_check:Array = [
 		area_collision_shape.global_transform.origin + Vector3(area_size.x, -area_size.y, area_size.z),
@@ -32,7 +32,7 @@ func placement_check() -> bool:
 		
 		var ray_from:Vector3 = points_to_check[i]
 		var ray_to:Vector3 = ray_from + Vector3(0,-20.0,0)
-		var space_state: PhysicsDirectSpaceState = get_world().direct_space_state
+		var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 		var result = space_state.intersect_ray(ray_from, ray_to, [], 0b10)
 		
 		if result:
