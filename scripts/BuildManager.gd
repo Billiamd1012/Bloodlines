@@ -37,7 +37,7 @@ func _process(_delta):
 			if Input.is_action_just_pressed("MouseLeft"):
 				PlaceBuilding()
 				
-		if Input.is_action_just_released("MouseRight"):
+		if Input.is_action_just_released("MouseRight") || Input.is_key_pressed(KEY_ESCAPE):
 			ExitBuildingMode()
 		
 	pass

@@ -1,6 +1,11 @@
 res://default_env.tres
-res://scenes/Room.tscn
 res://scenes/menu/MainMenu.tscn
+res://scenes/Room.tscn
 res://scenes/playerInterface/Camera.tscn
-res://scenes/test.tscn
 res://scenes/menu/PauseMenu.tscn
+res://scripts/playerInterface/Building.gd
+res://scripts/BuildManager.gd
+res://assets/buildings/BuildingObject.gd
+res://assets/buildings/WoodCutters.tscn
+res://scripts/GameManager.gd
+res://scripts/InterfaceManager.gd
