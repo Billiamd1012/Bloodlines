@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://m6xjuyy1eh1a"]
 
-[ext_resource type="Script" path="res://scripts/InterfaceManager.gd" id="1_nmhkv"]
+[ext_resource type="Script" path="res://scripts/playerInterface/InterfaceManager.gd" id="1_nmhkv"]
+
 
 [sub_resource type="RectangleShape2D" id="4"]
 size = Vector2(1150.75, 98.75)

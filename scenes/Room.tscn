@@ -30,8 +30,6 @@ height = 1.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("4")]
 visible = false
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("6")

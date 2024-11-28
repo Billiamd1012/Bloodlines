@@ -5,7 +5,7 @@
 [ext_resource type="Material" path="res://assets/buildings/Home/door.material" id="3"]
 [ext_resource type="Material" path="res://assets/buildings/Home/window.material" id="4"]
 [ext_resource type="Material" path="res://assets/buildings/Home/_defaultMat.material" id="5"]
-[ext_resource type="Script" path="res://assets/buildings/BuildingObject.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/building/BuildingObject.gd" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/units/StoneCutter.tscn" id="7"]
 
 [sub_resource type="ArrayMesh" id="1"]

@@ -100,7 +100,6 @@ func PlaceBuilding():
 	chargeObject(building)
 	building.SetDisabled(false)
 	building.position = CurrentSpawnable.position
-	navMesh.bake_navigation_mesh(true)
 
 func ExitBuildingMode():
 	CurrentSpawnable.queue_free()

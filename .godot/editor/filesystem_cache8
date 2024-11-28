@@ -1,13 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732757065
+::res://::1732777630
 default_env.tres::Environment::3855070353552018833::1732757075::0::1::::<><>::
-::res://assets/::1732757065
+::res://assets/::1732757075
 BlueBox.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://assets/materials/Player.tres
-BuildingObject.gd::GDScript::-1::1732755417::0::1::::<>StaticBody3D<>::
 Citizen.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://scripts/Citizen.gd
 icon.png::CompressedTexture2D::490559858070902997::1714362829::1732753275::1::::<><>::
 WoodCutter.tscn::PackedScene::3646219964735109232::1732757065::0::1::::<><>::
-::res://assets/buildings/::1732757065
+::res://assets/buildings/::1732757075
 CastleKeep.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://assets/buildings/Home/_defaultMat.material<>res://assets/buildings/Home/door.material<>res://assets/buildings/Home/window.material<>res://assets/buildings/Home/border.material
 Granery.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://assets/buildings/BuildingObject.gd
 House.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://assets/buildings/Home/_defaultMat.material<>res://assets/buildings/Home/door.material<>res://assets/buildings/Home/window.material<>res://assets/buildings/Home/border.material<>res://assets/buildings/Home/roof.material<>res://assets/buildings/BuildingObject.gd
@@ -17,7 +16,7 @@ StoneMasons.tscn::PackedScene::1158802125693747200::1732757065::0::1::::<><>::re
 wallNarrow.tscn::PackedScene::6508060868231625727::1732757065::0::1::::<><>::res://assets/buildings/Wall/wallDark.material<>res://assets/buildings/Wall/wall.material
 wallNarrowCorner.tscn::PackedScene::933515200385622792::1732757065::0::1::::<><>::res://assets/buildings/Wall/wallDark.material<>res://scripts/building/Building.gd<>res://assets/buildings/Wall/wall.material
 wallNarrowGate.tscn::PackedScene::2106287188468349530::1732757065::0::1::::<><>::res://assets/buildings/Wall/wallDark.material<>res://scripts/building/Building.gd<>res://assets/buildings/Wall/wall.material
-WoodCutters.tscn::PackedScene::6302331315070238235::1732757075::0::1::::<><>::res://scenes/units/WoodCutter.tscn<>res://assets/BuildingObject.gd<>res://assets/buildings/BuildingObject.gd
+WoodCutters.tscn::PackedScene::6302331315070238235::1732757075::0::1::::<><>::res://scenes/units/WoodCutter.tscn<>res://scripts/building/BuildingObject.gd<>res://assets/buildings/BuildingObject.gd
 ::res://assets/buildings/Home/::1732753279
 _defaultMat.material::StandardMaterial3D::-1::1714663644::0::1::::<><>::
 border.material::StandardMaterial3D::-1::1714663644::0::1::::<><>::
@@ -134,8 +133,9 @@ WoodCutter.tscn::PackedScene::-1::1732753181::0::1::::<><>::res://scenes/units/R
 BuildingManager.gd::GDScript::-1::1732756540::0::1::::<>Node3D<>::
 Citizen.gd::GDScript::-1::1732753181::0::1::::<>CharacterBody3D<>::
 GameManager.gd::GDScript::-1::1732756723::0::1::::<>Node<>::
-::res://scripts/building/::1732757055
+::res://scripts/building/::1732757075
 Building.gd::GDScript::-1::1732753181::0::1::::Building<>Node3D<>::
+BuildingObject.gd::GDScript::-1::1732755417::0::1::::<>StaticBody3D<>::
 BuildManager.gd::GDScript::-1::1732756693::0::1::::<>Node3D<>::
 ::res://scripts/menu/::1732753181
 MainMenu.gd::GDScript::-1::1732753181::0::1::::<>Control<>::
