@@ -33,7 +33,10 @@ func placement_check() -> bool:
 		var ray_from:Vector3 = points_to_check[i]
 		var ray_to:Vector3 = ray_from + Vector3(0,-20.0,0)
 		var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
-		var result = space_state.intersect_ray(ray_from, ray_to, [], 0b10)
+		var ray_parameters: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+		ray_parameters.from = ray_from
+		ray_parameters.to = ray_to
+		var result = space_state.intersect_ray(ray_parameters)
 		
 		if result:
 			var y_distance:float = ray_from.y - result.position.y

@@ -27,7 +27,7 @@ var foodBool = true
 var TaxRate := 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Citizen = ResourceLoader.load("res://Assets/Citizen.tscn")
+	Citizen = ResourceLoader.load("res://assets/Citizen.tscn")
 	firePitSpaces = get_tree().get_nodes_in_group("CitizenSpawnPoint")
 	pass # Replace with function body.
 

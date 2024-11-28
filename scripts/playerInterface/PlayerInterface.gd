@@ -19,7 +19,7 @@ func set_interface_input_mode(new_value) -> void:
 		node_building_manager.hide()
 		node_building_manager.disable_area()
 
-func _physics_process(delta:float) -> void:
+func _physics_process(_delta:float) -> void:
 	if interface_input_mode == 1:
 		var mouse_pos:Vector2 = get_global_mouse_position()
 		var camera:Camera3D = get_viewport().get_camera_3d()
@@ -28,7 +28,10 @@ func _physics_process(delta:float) -> void:
 		var ray_to: Vector3 = ray_from + camera.project_ray_normal(mouse_pos) * 1000.0
 
 		var space_state: PhysicsDirectSpaceState3D = camera.get_world_3d().direct_space_state
-		var result = space_state.intersect_ray(ray_from, ray_to, [], 0b10)
+		var ray_parameters = PhysicsRayQueryParameters3D.new()
+		ray_parameters.from = ray_from
+		ray_parameters.to = ray_to
+		var result = space_state.intersect_ray(ray_parameters)
 		
 		if result:
 			if node_building_manager.transform.origin != result.position:
@@ -45,7 +48,7 @@ func _physics_process(delta:float) -> void:
 		building_placer_location = Vector3.ZERO
 				
 
-func _input(event:InputEvent) -> void:
+func _input(_event:InputEvent) -> void:
 	if Input.is_action_just_released("mouseLeft"):
 		var shift:bool = Input.is_action_pressed("shift")
 		

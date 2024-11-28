@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://cv15qgh2kmfsd"]
+[gd_scene load_steps=6 format=4 uid="uid://cv15qgh2kmfsd"]
 
 [ext_resource type="PackedScene" path="res://scenes/units/WoodCutter.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/building/BuildingObject.gd" id="3_4ix4u"]
 [ext_resource type="Script" path="res://assets/buildings/BuildingObject.gd" id="6"]
 
 [sub_resource type="ArrayMesh" id="1"]
@@ -76,6 +77,7 @@ mesh = SubResource("1")
 
 [node name="house_type09" type="MeshInstance3D" parent="tmpParent"]
 mesh = SubResource("1")
+script = ExtResource("3_4ix4u")
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191062, -1.19209e-07, 0.646975)
