@@ -18,3 +18,5 @@ res://assets/buildings/Stockpile.tscn
 res://assets/buildings/StoneMasons.tscn
 res://scenes/Room.tscn
 res://scripts/menu/PauseMenu.gd
+res://assets/buildings/StonePile.tscn
+res://assets/buildings/Tree.tscn

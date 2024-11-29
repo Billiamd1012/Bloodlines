@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cfho5gvtnrob8" path="res://scenes/playerInterface/Camera.tscn" id="1"]
 [ext_resource type="Material" path="res://assets/menu/Ground.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://dele23y8ccyej" path="res://assets/buildings/Tree.tscn" id="3_enu61"]
 [ext_resource type="PackedScene" uid="uid://wxxgvp43lfc7" path="res://scenes/menu/PauseMenu.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://m6xjuyy1eh1a" path="res://scenes/playerInterface/interface.tscn" id="4_mdfdb"]
 [ext_resource type="Script" path="res://scripts/playerInterface/MouseArea2D.gd" id="6"]
-[ext_resource type="PackedScene" uid="uid://cv15qgh2kmfsd" path="res://assets/buildings/WoodCutters.tscn" id="6_id6dk"]
+[ext_resource type="PackedScene" uid="uid://dr5p8j5gxxr1x" path="res://assets/buildings/StonePile.tscn" id="7_4b7to"]
 
 [sub_resource type="NavigationMesh" id="6"]
 vertices = PackedVector3Array(-5.75, 0.825076, -20, -5, 0.825076, -20, -5, 0.825076, -249.5, -6.25, 0.825076, -19, -5.75, 0.825076, -20, -5, 0.825076, -249.5, -249.5, 0.825076, -249.5, -249.5, 0.825076, -19, 17.25, 0.825076, 4.75, 18.5, 0.825076, 6, 19.75, 0.825076, 6, -4, 0.825076, -19.75, -4, 0.825076, -18.5, 17.25, 0.825076, 4.75, -4, 0.825076, -19.75, 17.25, 0.825076, 4.75, 19.75, 0.825076, 6, 249.5, 0.825076, 7, 249.5, 0.825076, -249.5, -5, 0.825076, -249.5, 19.75, 0.825076, 6, 20, 0.825076, 7, 249.5, 0.825076, 7, -5, 0.825076, -249.5, -5, 0.825076, -20, -4, 0.825076, -19.75, -12.5, 0.825076, 2, -6.25, 0.825076, -18.75, -6.25, 0.825076, -19, -249.5, 0.825076, -19, -249.5, 0.825076, 3.25, -13.75, 0.825076, 2.5, -249.5, 0.825076, 3.25, -13.75, 0.825076, 3.25, -13.75, 0.825076, 2.5, -12.5, 0.825076, 2, -11.5, 0.825076, 3, -5.25, 0.825076, -17.75, -6.25, 0.825076, -18.75, -4.5, 0.825076, -17.75, -5.25, 0.825076, -17.75, -11.5, 0.825076, 3, -4.5, 0.825076, -17.75, -11.5, 0.825076, 3, -11.5, 0.825076, 3.5, 17.25, 0.825076, 4.75, -4, 0.825076, -18.5, -13.75, 0.825076, 4, -13.75, 0.825076, 3.25, -249.5, 0.825076, 3.25, -12.75, 0.825076, 4.25, -13.75, 0.825076, 4, -249.5, 0.825076, 3.25, -249.5, 0.825076, 249.5, -12.75, 0.825076, 249.5, 17.75, 0.825076, 6.75, 18.5, 0.825076, 6, 17.25, 0.825076, 4.75, -11.5, 0.825076, 3.5, -12.25, 0.825076, 4.25, 17.75, 0.825076, 7.5, 17.75, 0.825076, 6.75, -12.25, 0.825076, 4.25, 17.75, 0.825076, 7.5, -12.25, 0.825076, 4.25, -12.75, 0.825076, 4.25, -12.75, 0.825076, 249.5, 19, 0.825076, 249.5, 19, 0.825076, 8.25, 249.5, 0.825076, 7, 20, 0.825076, 7, 20, 0.825076, 7.75, 249.5, 0.825076, 7, 20, 0.825076, 7.75, 19, 0.825076, 8.25, 19, 0.825076, 249.5, 249.5, 0.825076, 249.5)
@@ -21,9 +22,6 @@ size = Vector3(500, 1, 500)
 
 [sub_resource type="CylinderShape3D" id="8"]
 height = 13.8418
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ic5q"]
-height = 1.0
 
 [sub_resource type="CircleShape2D" id="5"]
 
@@ -46,26 +44,7 @@ mesh = SubResource("BoxMesh_kovsu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground"]
 shape = SubResource("BoxShape3D_eo277")
 
-[node name="Tree" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9714, -0.277464, 7.00252)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Tree"]
-transform = Transform3D(1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0)
-mesh = SubResource("7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree"]
-shape = SubResource("8")
-
-[node name="StonePile" type="StaticBody3D" parent="NavigationRegion3D" groups=["stone"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3065, -0.277464, 25.7672)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StonePile"]
-transform = Transform3D(1, 0, 0, 0, 0.377657, 0, 0, 0, 1, 0, -0.2738, 0)
-mesh = SubResource("7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StonePile"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.272957, 0)
-shape = SubResource("CylinderShape3D_8ic5q")
+[node name="Tree" parent="NavigationRegion3D" instance=ExtResource("3_enu61")]
 
 [node name="Tree2" type="StaticBody3D" parent="NavigationRegion3D" groups=["tree"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00522, -0.277464, -18.9607)
@@ -87,6 +66,9 @@ mesh = SubResource("7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Tree3"]
 shape = SubResource("8")
 
+[node name="Stonepile" parent="NavigationRegion3D" groups=["stone"] instance=ExtResource("7_4b7to")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94468, 0.5, -18.457)
+
 [node name="MouseArea" type="Area2D" parent="."]
 script = ExtResource("6")
 
@@ -98,9 +80,4 @@ shape = SubResource("5")
 [node name="CameraWrapper" parent="." instance=ExtResource("1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.9013, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 159.27, 68.0903)
-light_energy = 16.0
-
-[node name="WoodCutters" parent="." instance=ExtResource("6_id6dk")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.5571, 0.5, -30.3198)
+[node name="DirectionalLight3D" parent="." instance=ExtResource("7_4b7to")]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dele23y8ccyej"]
+
+[sub_resource type="CylinderMesh" id="7"]
+
+[sub_resource type="CylinderShape3D" id="8"]
+height = 13.8418
+
+[node name="Tree" type="StaticBody3D" groups=["tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9714, -0.277464, 7.00252)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.917, 0, 0, 0, 1, 0, 3.01954, 0)
+mesh = SubResource("7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("8")
