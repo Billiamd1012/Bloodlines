@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cv15qgh2kmfsd"]
+[gd_scene load_steps=6 format=4 uid="uid://cv15qgh2kmfsd"]
 
 [ext_resource type="PackedScene" path="res://scenes/units/WoodCutter.tscn" id="1"]
 [ext_resource type="Script" path="res://scripts/building/BuildingObject.gd" id="3_4ix4u"]
+[ext_resource type="Material" path="res://assets/buildings/Home/roof.material" id="3_urdnd"]
 
 [sub_resource type="ArrayMesh" id="1"]
 resource_name = "house_type08_Mesh house_type08"
@@ -75,6 +76,7 @@ Actor = ExtResource("1")
 mesh = SubResource("1")
 
 [node name="house_type09" type="MeshInstance3D" parent="tmpParent"]
+material_override = ExtResource("3_urdnd")
 mesh = SubResource("1")
 
 [node name="SpawnPoint" type="Marker3D" parent="."]

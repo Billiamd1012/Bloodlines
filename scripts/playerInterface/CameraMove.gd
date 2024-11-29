@@ -6,10 +6,10 @@ var move: Vector3 = Vector3(0, 0, 0)  # Class variable to store the movement
 # Lock mouse inside the window
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	
 
 
 func _process(_delta: float) -> void:
+
 	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 	var screen_size: Vector2 = get_viewport().get_visible_rect().size
 

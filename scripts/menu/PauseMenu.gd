@@ -13,11 +13,12 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = true
 			interface.hide()
 			self.show()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_ResumeButton_pressed() -> void:
 	interface.show()  # Show the player interface
 	self.hide()  # Hide the pause menu
-	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	get_tree().paused = false  # Resume the game
 
 func _on_OptionsButton_pressed() -> void:
